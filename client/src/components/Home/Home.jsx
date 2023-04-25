@@ -1,8 +1,21 @@
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { auth } from '../../firebase'
 
+const Home = (props) => {
+  const [userName, setUserName] = useState([{}])
 
-const Home = () => {
-
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUserName(user.displayName)
+      }
+      else {
+        setUserName("")
+      }
+    })
+  
+  }, [])
   return (
     <div>
       <div>
@@ -27,6 +40,9 @@ const Home = () => {
         <p className='text-2xl'>
           Edit this homepage, this will be the landing page as of now we will use this for simpler nav
         </p>
+        {/* <h2>
+          {props.name ? `Welcome - ${props.name}` : "Login Please"}
+        </h2> */}
 
       </div>
     </div>

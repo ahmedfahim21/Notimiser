@@ -1,8 +1,8 @@
-import  { useState } from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import InputControl from './InputControl'
+import InputControl from '../InputControl/InputControl'
 import {createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
-import {auth} from "./../firebase"
+import {auth} from '../../firebase'
 import { GoogleButton } from "react-google-button"
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
@@ -25,7 +25,7 @@ const Signup = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate("/");
+        navigate("/dashboard");
       }).catch((error) => {
         setErrorMsg(error.message);
       });
@@ -48,7 +48,7 @@ const Signup = () => {
           displayName: values.name,
         })
 
-        navigate("/")
+        navigate("/dashboard")
         console.log(user);
       })
       .catch(
