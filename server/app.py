@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 from PyPDF2 import PdfReader
 
@@ -22,4 +22,4 @@ def upload():
         text += pdf_reader.pages[page].extract_text()
 
     print(text)
-    return {"message": "read pdf successfully"}
+    return jsonify({'extracted_text': text})
