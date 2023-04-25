@@ -16,8 +16,9 @@ const Notimised = () => {
     e.preventDefault()
 
     const doc = new jsPDF({
-			format: 'a4',
+      orientation: 'portrait',
 			unit: 'px',
+      format: 'a4'
 		});
 
     doc.html(notimisedRef.current, {

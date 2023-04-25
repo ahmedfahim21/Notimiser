@@ -2,12 +2,19 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import {createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
 import {auth} from '../../firebase'
+import Loading from '../Loading/Loading'
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import logo from '../../assets/notimiser-logo.png'
 import {FcGoogle} from 'react-icons/fc'
 
 const Signup = () => {
   const navigate = useNavigate()
+
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    setTimeout(() => { setIsLoading(false) }, 1600);
+  }, [])
 
   const [values, setValues] = useState({
     name: "",
@@ -61,6 +68,13 @@ const Signup = () => {
       handleGoogleAuth();
   }
 
+  if (isLoading) {
+    return (
+      <div className="bg-background w-full overflow-hidden">
+        <Loading />
+      </div>
+    )
+  } else {
   return (
     <div className='h-screen sm:bg-pattern bg-cover bg-[#2abfff] flex flex-wrap overflow-x-hidden'>
       <div className="lg:w-[30%] sm:w-[80%] w-[90%] mx-auto my-20 justify-center">
@@ -82,6 +96,7 @@ const Signup = () => {
     
     </div>
   )
+}
 }
 
 export default Signup
