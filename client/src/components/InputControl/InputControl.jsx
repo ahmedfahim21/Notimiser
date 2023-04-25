@@ -4,7 +4,7 @@ import React from 'react'
 const InputControl = (props) => {
   return (
     <div>    
-      <input type={`${props.label}`} className='p-4 bg-[#2ABFFF] border-2 border-white m-2 rounded-lg text-white placeholder:text-white w-[500px]' {...props}/>
+      <input type={`${props.label}`} className='p-3 bg-white border-2 border-white my-1 rounded-lg text-white placeholder:text-[#2abfff] w-[100%]' {...props}/>
     </div>
   )
 }
