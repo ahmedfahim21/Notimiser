@@ -1,11 +1,15 @@
 import os
 
-from flask import Flask, request, jsonify
+import torch
+import torchvision.transforms as transforms
+from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 from PyPDF2 import PdfReader
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.text_rank import TextRankSummarizer
+
+model=torch.hub.load('compvis/stable-nf','imagenet_16384', source="local")
 
 app = Flask(__name__) 
 CORS(app) 
@@ -30,6 +34,18 @@ def upload():
     summary_text = ""
     for sentence in summary:
         summary_text += str(sentence) + " "
+    
+    prompt="A picture of"+summary_text+"\n\n"+text
 
-    print(text)
-    return jsonify({'extracted_text': text, 'summary_text': summary_text})
+    img=model.sample(prompt, num_samples=1, batch_size=1)
+
+    img=transforms.ToPILImage()(img[0].cpu()).convert("RGB")
+
+    img.save("generated_image.jpg")
+
+    return (send_file("generated_image.jpg", mimetype='image/gif'),jsonify({'extracted_text': text, 'summary_text': summary_text}))
+
+    #print(text)
+    #return jsonify({'extracted_text': text, 'summary_text': summary_text})
+
+

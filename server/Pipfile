@@ -8,6 +8,10 @@ flask = "*"
 flask-cors = "*"
 pypdf2 = "*"
 sumy = "*"
+nltk = "*"
+numpy = "*"
+torch = "*"
+torchvision = "*"
 
 [dev-packages]
 
