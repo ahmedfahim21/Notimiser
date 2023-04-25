@@ -61,7 +61,7 @@ const Login = () => {
 
   return (
     <div className='h-screen sm:bg-pattern bg-cover bg-[#2abfff] flex flex-wrap overflow-x-hidden'>
-      <div className="lg:w-[30%] sm:w-[80%] w-[90%] mx-auto my-20 justify-center">text-white
+      <div className="lg:w-[30%] sm:w-[80%] w-[90%] mx-auto my-20 justify-center">
       <img src={logo} alt="logo" className="mx-auto w-[30%]"/>
       <h1 className="flex justify-center text-4xl font-bold mx-auto p-5 text-white">Login</h1>
       <div className='flex-wrap justify-center mx-auto'>
