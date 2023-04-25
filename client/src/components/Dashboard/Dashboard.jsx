@@ -56,15 +56,22 @@ const Dashboard = () => {
     console.log(file);
 
 
-    fetch("http://localhost:5000/upload", {
+    const response = await fetch("http://localhost:5000/upload", {
       method: "POST",
       body: formData,
-    }).then(res => res.json())
-    .then(data => {
-      console.log(data);
-      setResult(data);
-    });
+    })
+    // .then(res => res.json())
+    // .then(data => {
+    //   console.log(data);
+    //   setResult(data);
+    // });
+
+    const data = await response.json()
+    setResult(data.extracted_text)
+
   };
+
+  
 
 
   return (
