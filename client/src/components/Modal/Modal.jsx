@@ -69,7 +69,7 @@ const Modal = () => {
       })
   
       const data = await response.json()
-      setResult(data.extracted_text)
+      setResult(data.summary_text)
   
     };
   
