@@ -71,7 +71,14 @@ const Dashboard = () => {
 
   };
 
-  
+  const handleNotimisation = () => {
+    if(result) {
+      navigate("/notimised?result="+ encodeURIComponent(result))
+    }
+    else {
+      alert("Please upload a pdf to process first")
+    }
+  }
 
 
   return (
@@ -117,6 +124,14 @@ const Dashboard = () => {
               <a href={pdf} target="_blank" className="">
                 View File
               </a>
+            </button>
+
+            <button
+              type="submit"
+              onClick={handleNotimisation}
+              className="bg-white text-black  m-4 py-2 px-4 rounded-full"
+            >
+              View Notimised
             </button>
 
           </div>

@@ -5,6 +5,7 @@ import Home from './components/Home/Home'
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Dashboard from './components/Dashboard/Dashboard';
+import Notimised from './components/Notimised/Notimised';
 
 import './index.css'
 import { AuthProvider } from './AuthProvider';
@@ -20,6 +21,7 @@ root.render(
           <Route path='login' element={<Login />}></Route>
           <Route path='signup' element={<Signup />}></Route>
           <Route path='dashboard' element={<Dashboard />}></Route>  
+          <Route path='notimised' element={<Notimised />}></Route>  
         </Routes>
       </AuthProvider>
     </BrowserRouter>
