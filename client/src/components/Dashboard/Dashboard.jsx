@@ -54,7 +54,7 @@ const Dashboard = () => {
                           setShowMore(!showMore);
                         }}
                       >
-                        <FcPrevious className="w-[30px]" />
+                        <FcPrevious size="30px" />
                       </button>
                     </div>
                     <div className="basis-11/12 flex py-2">

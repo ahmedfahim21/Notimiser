@@ -3,6 +3,11 @@ import jsPDF from 'jspdf';
 import { useRef, useState } from 'react';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { storage } from '../../firebase';
+import { Link } from 'react-router-dom';
+import React, {useEffect} from 'react';
+import { auth } from '../../firebase';
+import Loading from '../Loading/Loading';
+import { FaFileDownload } from 'react-icons/fa';
 
 const Notimised = () => {
   const location = useLocation();
@@ -47,23 +52,56 @@ const Notimised = () => {
     )
 
   }
+  const [userName, setUserName] = useState("")
+  const [isLoading, setIsLoading] = React.useState(true);
 
+  React.useEffect(() => {
+    setTimeout(() => { setIsLoading(false) }, 1600);
+  }, [])
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUserName(user.displayName)
+      }
+      else {
+        setUserName("")
+      }
+    })
+  
+  }, [])
+
+
+  if (isLoading) {
+    return (
+      <div className="bg-background w-full overflow-hidden">
+        <Loading />
+      </div>
+    )
+  } else {
   return (
     <div>
-      <h1 className='text-5xl'>Note-Heading</h1>
-      <button onClick={handleGeneratePDF}>
-        Generate PDF
+      <header className="h-[80px] w-full bg-[#2abfff] font-bold p-5 text-2xl text-white flex justify-between items-center">
+        <p>Welcome {userName}</p>
+        <Link to='/login'><p className="justify-end text-xl border-2 border-white p-2 rounded-md hover:bg-white hover:text-[#2abfff]">Logout</p></Link>
+      </header>
+      <div className='flex justify-between'>
+      <Link to='/dashboard'><p className="justify-start text-xl border-2 border-[#2abfff] p-2 rounded-md text-[#2abfff] m-3">Back</p></Link>
+      <h1 className='text-5xl mx-auto text-center my-8'>Note-Heading</h1> 
+      <button onClick={handleGeneratePDF} className='justify-end m-5'>
+        <FaFileDownload size="40px" />
       </button>
-
+      </div>
       {notimisedFB && 
       <a href={notimisedFB}>View PDF</a>
       }
 
-      <div className='m-auto p-4 w-[500px] border-2 border-white rounded-lg'>
-      <p className='italic text-amber-950 font-mono font-extrabold' ref={notimisedRef}>{result}</p>
+      <div className='m-auto p-4 md:w-[60%] w-[80%]'>
+      <p className='text-black text-xl' ref={notimisedRef}>{result}</p>
+      
       </div>
     </div>
-  );
+  )};
 };
 
 export default Notimised
