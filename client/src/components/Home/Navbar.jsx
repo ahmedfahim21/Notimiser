@@ -25,12 +25,12 @@ function Navbar() {
             !nav? <AiOutlineClose size={20} /> :<AiOutlineMenu size={20}/>
         }
         </div>
-      <div className={!nav? 'fixed left-0 top-0 w-[60%] border-r h-screen bg-[#eee] ease-in-out duration-500' : 'fixed left-[-100%]'}>
+      <div className={!nav? 'fixed left-0 top-0 w-[60%] border-r h-screen bg-[#ffe] ease-in-out duration-500' : 'fixed left-[-100%]'}>
       <h1 className='w-full text-3xl font-bold m-7 text-[#2abfff]'>NOTIMISER</h1>
-        <a href="#home"><li className='p-4 border-b border-[#2abfff]'>HOME</li></a>
-        <Link to="/login"><li className='p-4 border-b border-[#2abfff]'>LOGIN</li></Link>
-        <Link to="/signup"><li className='p-4 border-b border-[#2abfff]'>REGISTER</li></Link>
-        <a href="#about"><li className='p-4 border-b border-[#2abfff]'>ABOUT</li></a>
+        <a href="#home"><li className='p-4 border-b border-[#2abfff] text-[#2abfff]'>HOME</li></a>
+        <Link to="/login"><li className='p-4 border-b border-[#2abfff] text-[#2abfff]'>LOGIN</li></Link>
+        <Link to="/signup"><li className='p-4 border-b border-[#2abfff] text-[#2abfff]'>REGISTER</li></Link>
+        <a href="#about"><li className='p-4 border-b border-[#2abfff] text-[#2abfff]'>ABOUT</li></a>
       </div>
     </div>
   )

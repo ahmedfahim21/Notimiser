@@ -6,7 +6,6 @@ from PyPDF2 import PdfReader
 from sumy.parsers.plaintext import PlaintextParser
 from sumy.nlp.tokenizers import Tokenizer
 from sumy.summarizers.text_rank import TextRankSummarizer
-import wolframalpha
 
 app = Flask(__name__) 
 CORS(app) 
@@ -17,7 +16,6 @@ def upload():
     uploaded_file = request.files['file']
     start_page = int(request.form['start_page'])
     end_page = int(request.form['end_page'])
-    title = request.form['title']
     pdf_reader = PdfReader(uploaded_file)
     num_pages = len(pdf_reader.pages)
     if end_page > num_pages:
@@ -34,14 +32,4 @@ def upload():
         summary_text += str(sentence) + " "
 
     print(text)
-    
-    return jsonify({'extracted_text': text, 'title': title, 'summary_text': summary_text})
-
-# @app.route('/doubt', methods=['POST'])
-# def doubt():
-#     question = request.form['question']
-#     app_id = "HY6XEU-V67KAT5G2G"
-#     client = wolframalpha.Client(app_id)
-#     res = client.query(question)
-#     answer = next(res.results).text
-#     return jsonify({'answer': answer})
+    return jsonify({'extracted_text': text, 'summary_text': summary_text})
