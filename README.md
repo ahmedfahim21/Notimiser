@@ -132,4 +132,9 @@ Notimiser aims at resolving issues of students in better retention by providing 
 - [ ] This can help alongside our summarization to better streamline the information to the user. 
 - [ ] Our aim is also to make use of more Generative AI Models like Whisper, GPTs, DALL-E, Codex and many more to provide more support to the user.
 
+## References
+- https://nanonets.com/blog/pypdf2-library-working-with-pdf-files-in-python/#why-is-text-extraction-from-pdf-hard
+- https://levelup.gitconnected.com/using-tensorflow-with-flask-and-react-ba52babe4bb5
+- https://iq.opengenus.org/bert-for-text-summarization/#:~:text=Machine%20Learning%20(ML)%20BERT&text=Extractive%20Text%20summarization%20refers%20to,approach%20to%20perform%20NLP%20tasks.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
