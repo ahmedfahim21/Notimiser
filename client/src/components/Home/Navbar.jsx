@@ -18,7 +18,7 @@ function Navbar() {
         <a href="#home"><li className='p-4'>HOME</li></a>
         <Link to="/login"><li className='p-4'>LOGIN</li></Link>
         <Link to="/signup"><li className='p-4'>SIGNUP</li></Link>
-        <a href="#blogs"><li className='p-4'>ABOUT</li></a>
+        <a href="#about"><li className='p-4'>ABOUT</li></a>
       </ul>
       <div onClick={handleNav} className='block md:hidden'>
         {
@@ -30,7 +30,7 @@ function Navbar() {
         <a href="#home"><li className='p-4 border-b border-[#2abfff]'>HOME</li></a>
         <Link to="/login"><li className='p-4 border-b border-[#2abfff]'>LOGIN</li></Link>
         <Link to="/signup"><li className='p-4 border-b border-[#2abfff]'>REGISTER</li></Link>
-        <a href="#blogs"><li className='p-4 border-b border-[#2abfff]'>ABOUT</li></a>
+        <a href="#about"><li className='p-4 border-b border-[#2abfff]'>ABOUT</li></a>
       </div>
     </div>
   )
