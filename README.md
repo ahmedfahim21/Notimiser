@@ -19,9 +19,40 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Abstract Overview
+
+
+
+To achieve the goal of differentiating between the modes of the text and summarizing it, Notimiser employs several machine learning models. The first model is used to segregate the type of text, which demands a separate workflow. The second model summarizes the text based on the mode. These models work together to create a summary that is dense in information and easy to understand.
+
+Additionally, Notimiser utilizes the DALL-E model and ChatGPT plugins to generate images that complement the summarized text. This provides users with a more immersive and engaging experience, allowing them to better understand and retain the information provided.
+
+In conclusion, Notimiser offers a unique and innovative solution for summarizing academic and non-academic texts, leveraging the power of machine learning and cutting-edge models to provide users with an efficient and engaging experience. With its ability to differentiate between text modes and provide summarized content with supporting images, Notimiser is poised to revolutionize the way people consume information.
+
+## Project Snapshot
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
+## Solution
+
+Notimiser uses the Summarizer Machine Learning Model, which helps in generating a summarized version of the text. The user input recieved by the frontend is in pdf, from which the text is extracted using certain python libraries. 
+
+This text is sent as an input into various Machine Learning Models. The first model being the SBert Model for Summarization. 
+
+## Summarisation Techniques
+
+Notimiser uses extractive and abstractive summarisation techniques to generate a summary of the document. Extractive summarisation involves selecting important sentences from the original document and combining them to form a summary. 
+Abstractive Summarisation will generate it's own summary. 
+The choice of either is decided by our classification algorithm, where we decide to go with the former if the corpus is related to academia or the latter if not.
+
+## Machine Learning Model
+
+1) PDF Summarisation using Flask uses a Support Vector Machine (SVM) model for document classification. The model was trained on a dataset of labelled documents using scikit-learn. The following preprocessing steps were applied to the data:
+
+2) Tokenization: splitting the text into individual words
+Stopword removal: removing common words that do not provide useful information
+Stemming: reducing words to their base form
+The features used for classification were Sentence Transformer vectors. The SVM algorithm was chosen because it has been shown to perform well for text classification tasks.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -84,21 +115,16 @@ To get a local copy up and running follow these simple example steps.
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
 
-## Summarisation Techniques
 
-PDF Summarisation using Flask uses extractive and abstractive summarisation techniques to generate a summary of the document. Extractive summarisation involves selecting important sentences from the original document and combining them to form a summary. 
-Abstractive Summarisation will generate it's own summary. 
-The choice of either is decided by our classification algorithm, where we decide to go with the former if the corpus is related to academia or the latter if not.
+## Features
 
-## Machine Learning Model
+Notimiser offers several functionalities, one of them being the pdf to summarized text. User has an option to download the summarized version of the pdf according to convenience.
 
-PDF Summarisation using Flask uses a Support Vector Machine (SVM) model for document classification. The model was trained on a dataset of labelled documents using scikit-learn. The following preprocessing steps were applied to the data:
 
-Tokenization: splitting the text into individual words
-Stopword removal: removing common words that do not provide useful information
-Stemming: reducing words to their base form
-The features used for classification were Sentence Transformer vectors. The SVM algorithm was chosen because it has been shown to perform well for text classification tasks.
 
+## Goal
+
+Notimiser aims at resolving issues of students in better retention by providing visual aids and short summarised outputs. 
 
 ## Vision
 
