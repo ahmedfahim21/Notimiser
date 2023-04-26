@@ -55,9 +55,11 @@ const Modal = () => {
   
       const startPage = document.getElementById("start-page").value;
       const endPage = document.getElementById("end-page").value;
+      // const title = document.getElementById("title").value;
   
       const formData = new FormData();
       formData.append("file", file);
+      // formData.append("title", title);
       formData.append("start_page", startPage);
       formData.append("end_page", endPage);
       console.log(file);
@@ -91,6 +93,13 @@ const Modal = () => {
           onSubmit={handleSubmit}
           className="flex flex-col m-5 p-5 mt-[50px] "
         >
+          {/* <input
+            type="text"
+            name="pdf"
+            id="title"
+            required
+            className="p-3 pl-5 text-lg bg-white border-2 border-white my-1 rounded-lg text-[#2abfff] placeholder:text-[#2abfff] w-[100%]"
+          /> */}
           <input
             type="file"
             name="pdf"

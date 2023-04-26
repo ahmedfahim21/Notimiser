@@ -10,8 +10,7 @@ pypdf2 = "*"
 sumy = "*"
 nltk = "*"
 numpy = "*"
-torch = "*"
-torchvision = "*"
+wolframalpha = "*"
 
 [dev-packages]
 

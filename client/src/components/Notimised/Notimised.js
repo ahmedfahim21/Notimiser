@@ -13,17 +13,19 @@ const Notimised = () => {
   const location = useLocation();
   const result = new URLSearchParams(location.search).get('result');
   const notimisedRef = useRef(result)
+  const [answer, setAnswer] = useState("")
 
   const [notimisedFB, setNotimisedFB] = useState(null)
+
 
   const handleGeneratePDF = (e) => {
 
     e.preventDefault()
 
     const doc = new jsPDF({
-      orientation: 'portrait',
+      orientation: 'landscape',
 			unit: 'px',
-      format: 'a4'
+      format: 'a2'
 		});
 
     doc.html(notimisedRef.current, {
@@ -50,8 +52,8 @@ const Notimised = () => {
       setNotimisedFB(downloadURl)
     })
     )
-
   }
+
   const [userName, setUserName] = useState("")
   const [isLoading, setIsLoading] = React.useState(true);
 
@@ -71,6 +73,23 @@ const Notimised = () => {
   
   }, [])
 
+  // const question = document.getElementById("question").value;
+
+  // const handleSubmit = async() => {
+
+  //   const formData = new FormData();
+  //     formData.append("question", question);
+  
+  //     const response = await fetch("http://localhost:5000/doubt", {
+  //       method: "POST",
+  //       body: formData,
+  //     })
+  
+  //     const data = await response.json()
+  //     setAnswer(data.answer)
+
+  // }
+
 
   if (isLoading) {
     return (
@@ -87,7 +106,7 @@ const Notimised = () => {
       </header>
       <div className='flex justify-between'>
       <Link to='/dashboard'><p className="justify-start text-xl border-2 border-[#2abfff] p-2 rounded-md text-[#2abfff] m-3">Back</p></Link>
-      <h1 className='text-5xl mx-auto text-center my-8'>Note-Heading</h1> 
+      <h1 className='text-5xl mx-auto text-center my-8'>Notimised Text</h1> 
       <button onClick={handleGeneratePDF} className='justify-end m-5'>
         <FaFileDownload size="40px" />
       </button>
@@ -97,9 +116,26 @@ const Notimised = () => {
       }
 
       <div className='m-auto p-4 md:w-[60%] w-[80%]'>
-      <p className='text-black text-xl' ref={notimisedRef}>{result}</p>
+      {/* <p className='text-black text-xl' >{result}</p> */}
+      <p className='text-black text-xl m-4 p-4' ref={notimisedRef}>{result}</p>
       
       </div>
+{/*       
+        {answer && <p className='text-black text-xl' ref={notimisedRef}>{answer}</p>}
+
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col m-5 p-5 mt-[50px] "
+        >            
+            <input id="question" className="m-2 p-3 text-lg bg-white border-2 my-1 rounded-lg text-[#2abfff] placeholder:text-[#2abfff] w-[50%]" placeholder="Questions"/>
+
+          <button
+            type="submit"
+            className="p-3 my-10 text-lg text-white border-2 border-white rounded-lg bg-[#2abfff] w-[100%]"
+          >
+            Ask Doubt
+          </button>
+        </form> */}
     </div>
   )};
 };
