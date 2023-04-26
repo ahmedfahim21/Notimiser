@@ -5,10 +5,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/ahmedfahim21/Notimiser">
+<!--   <a href="https://github.com/ahmedfahim21/Notimiser">
     <img src="./client/public/blue-logo.png" alt="Logo" width="80">
-  </a>
-
+  </a> -->
+<a href="https://imgtr.ee/i/8sf8q"><img src="https://imgtr.ee/images/2023/04/26/8sf8q.png" alt="8sf8q.png" border="0" width="80"/></a>
 <h3 align="center">NOTIMISER</h3>
 
   <p align="center">
@@ -31,7 +31,8 @@ In conclusion, Notimiser offers a unique and innovative solution for summarizing
 
 ## Project Snapshot
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
+[![8sc5c.png](https://imgtr.ee/images/2023/04/26/8sc5c.png)](https://imgtr.ee/i/8sc5c)
 ## Solution
 
 Notimiser uses the Summarizer Machine Learning Model, which helps in generating a summarized version of the text. The user input recieved by the frontend is in pdf, from which the text is extracted using certain python libraries. 
@@ -110,7 +111,7 @@ To get a local copy up and running follow these simple example steps.
 
 
 
-[product-screenshot]: ./client/public/Screenshot.png
+[product-screenshot]: https://i.ibb.co/m9fbxPT/Screenshot.png
 
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
