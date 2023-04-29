@@ -8,12 +8,12 @@ import React, {useEffect} from 'react';
 import { auth } from '../../firebase';
 import Loading from '../Loading/Loading';
 import { FaFileDownload } from 'react-icons/fa';
+import Doubts from '../Doubts/Doubts';
 
 const Notimised = () => {
   const location = useLocation();
   const result = new URLSearchParams(location.search).get('result');
   const notimisedRef = useRef(result)
-  const [answer, setAnswer] = useState("")
 
   const [notimisedFB, setNotimisedFB] = useState(null)
 
@@ -73,23 +73,6 @@ const Notimised = () => {
   
   }, [])
 
-  // const question = document.getElementById("question").value;
-
-  // const handleSubmit = async() => {
-
-  //   const formData = new FormData();
-  //     formData.append("question", question);
-  
-  //     const response = await fetch("http://localhost:5000/doubt", {
-  //       method: "POST",
-  //       body: formData,
-  //     })
-  
-  //     const data = await response.json()
-  //     setAnswer(data.answer)
-
-  // }
-
 
   if (isLoading) {
     return (
@@ -118,24 +101,12 @@ const Notimised = () => {
       <div className='m-auto p-4 md:w-[60%] w-[80%]'>
       {/* <p className='text-black text-xl' >{result}</p> */}
       <p className='text-black text-xl m-4 p-4' ref={notimisedRef}>{result}</p>
+      {/* <Link to='/doubts'><button className="p-3 my-10 text-lg text-white border-2 border-white rounded-lg bg-[#2abfff] w-[70%]">Doubts</button></Link> */}
       
+      <h1 className='text-black text-2xl mt-20 mx-4 px-4'>Doubts Section:</h1>
+      <Doubts />
       </div>
-{/*       
-        {answer && <p className='text-black text-xl' ref={notimisedRef}>{answer}</p>}
-
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col m-5 p-5 mt-[50px] "
-        >            
-            <input id="question" className="m-2 p-3 text-lg bg-white border-2 my-1 rounded-lg text-[#2abfff] placeholder:text-[#2abfff] w-[50%]" placeholder="Questions"/>
-
-          <button
-            type="submit"
-            className="p-3 my-10 text-lg text-white border-2 border-white rounded-lg bg-[#2abfff] w-[100%]"
-          >
-            Ask Doubt
-          </button>
-        </form> */}
+      
     </div>
   )};
 };

@@ -24,6 +24,7 @@ nltk.download("stopwords")
 from sentence_transformers import SentenceTransformer
 from nltk.tokenize import sent_tokenize
 from summarizer.sbert import SBertSummarizer
+import wolframalpha
 
 
 model0 = T5ForConditionalGeneration.from_pretrained('t5-small')
@@ -36,6 +37,31 @@ FLAG=0
 app = Flask(__name__) 
 CORS(app) 
 
+@app.route('/doubts', methods=['GET'])
+def doubts():
+    # # Taking input from user
+    # received = request.form['question']
+    # question = 'Question: ' + received
+    # print(question)
+    # App id obtained by the above steps
+    app_id = "HY6XEU-V67KAT5G2G"
+    
+    # Instance of wolf ram alpha 
+    # client class
+    client = wolframalpha.Client(app_id)
+    
+    # # Stores the response from 
+    # # wolf ram alpha
+    # res = client.query(question)
+    
+    # # Includes only text from the response
+    # answer = next(res.results).pod.subpod.plaintext
+    # print(answer)
+    query = request.args.get('query')
+    res = client.query(query)
+    answer = next(res.results).text
+    
+    return jsonify({'answer': answer})
 
 @app.route('/upload', methods=['POST'])
 def upload():
