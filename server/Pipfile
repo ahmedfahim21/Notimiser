@@ -11,6 +11,13 @@ sumy = "*"
 nltk = "*"
 numpy = "*"
 wolframalpha = "*"
+contractions = "*"
+transformers = "*"
+sentencepiece = "*"
+pandas = "*"
+sentence-transformers = "*"
+summarizer = "*"
+bert-extractive-summarizer = "*"
 
 [dev-packages]
 
