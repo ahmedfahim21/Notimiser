@@ -25,7 +25,7 @@
 
 To achieve the goal of differentiating between the modes of the text and summarizing it, Notimiser employs several machine learning models. The first model is used to segregate the type of text, which demands a separate workflow. The second model summarizes the text based on the mode. These models work together to create a summary that is dense in information and easy to understand.
 
-Additionally, Notimiser utilizes the DALL-E model and ChatGPT plugins to generate images that complement the summarized text. This provides users with a more immersive and engaging experience, allowing them to better understand and retain the information provided.
+Additionally, Notimiser utilizes the Wolfram plugins to a doubt clearing feature that complements the summarized text. This provides users with a more immersive and engaging experience, allowing them to better understand and retain the information provided.
 
 In conclusion, Notimiser offers a unique and innovative solution for summarizing academic and non-academic texts, leveraging the power of machine learning and cutting-edge models to provide users with an efficient and engaging experience. With its ability to differentiate between text modes and provide summarized content with supporting images, Notimiser is poised to revolutionize the way people consume information.
 
@@ -104,6 +104,7 @@ To get a local copy up and running follow these simple example steps.
    cd server
    pipenv install --python 3
    pipenv shell
+   pipenv install -r requirements.txt
    flask run
    ```
 
