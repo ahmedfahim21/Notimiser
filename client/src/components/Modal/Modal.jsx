@@ -85,10 +85,10 @@ const Modal = () => {
     }
 
   return (
-        <div className="flex flex-col mx-auto h-[600px]">
+        <div className="flex flex-col mx-auto h-[500px]">
           {!show? (
         <>
-          <img src={img} className="mx-auto p-0 w-[60%]" alt="" />
+          <img src={img} className="mx-auto p-0 w-[40%]" alt="" />
         <form
           onSubmit={handleSubmit}
           className="flex flex-col m-5 p-5 mt-[50px] "
@@ -109,8 +109,8 @@ const Modal = () => {
           />
           <div className="flex">
             
-            <input type="number" id="start-page" min="1" className="m-2 p-3 text-lg bg-white border-2 my-1 rounded-lg text-[#2abfff] placeholder:text-[#2abfff] w-[50%]" placeholder="Start Page"/>
-            <input type="number" id="end-page" min="1" className="m-2 p-3 text-lg bg-white border-2  my-1 rounded-lg text-[#2abfff] placeholder:text-[#2abfff] w-[50%]" placeholder="End Page"/>
+            <input type="number" id="start-page" min="1" className="m-2 p-2 text-lg bg-white border-2 my-1 rounded-lg text-[#2abfff] placeholder:text-[#2abfff] w-[50%]" placeholder="Start Page"/>
+            <input type="number" id="end-page" min="1" className="m-2 p-2 text-lg bg-white border-2  my-1 rounded-lg text-[#2abfff] placeholder:text-[#2abfff] w-[50%]" placeholder="End Page"/>
           </div>
           <button
             type="submit"
