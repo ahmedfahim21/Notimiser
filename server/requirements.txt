@@ -1,0 +1,14 @@
+flask
+flask-cors
+pypdf2
+sumy
+nltk
+numpy
+wolframalpha
+contractions
+transformers
+sentencepiece
+pandas
+sentence-transformers
+summarizer
+bert-extractive-summarizer
